@@ -11,6 +11,14 @@ CREATE TABLE "departments" (
      )
 );
 
+CREATE TABLE "titles" (
+    "title_id" VARCHAR(30) NOT NULL,
+    "title" VARCHAR(30) NOT NULL,
+    CONSTRAINT "pk_titles" PRIMARY KEY (
+        "title_id"
+     )
+);
+
 CREATE TABLE "employees" (
     "emp_no" INT NOT NULL,
     "emp_title_id" VARCHAR(30) NOT NULL,
@@ -37,14 +45,6 @@ CREATE TABLE "dept_manager" (
 CREATE TABLE "salaries" (
     "emp_no" INT NOT NULL,
     "salary" INT NOT NULL
-);
-
-CREATE TABLE "titles" (
-    "title_id" VARCHAR(30) NOT NULL,
-    "title" VARCHAR(30) NOT NULL,
-    CONSTRAINT "pk_titles" PRIMARY KEY (
-        "title_id"
-     )
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
